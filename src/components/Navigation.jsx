@@ -25,7 +25,12 @@ export const Navigation = () => {
       <div className="navigatoin__elements-wrapper">
         <nav className={`navigation__menu ${menuIsExtended ? 'navigation__menu--show' : ''}`}>
           <ul className="navigation__list">{navigationList}</ul>
-          <input type="text" placeholder="How can we help?" className="navigation__search" />
+          <input
+            required
+            type="text"
+            placeholder="How can we help?"
+            className="navigation__search"
+          />
         </nav>
         <Hamburger isClicked={menuIsExtended} click={setMenuIsExtended} />
       </div>
