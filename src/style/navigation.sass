@@ -1,5 +1,47 @@
 .navigation
-    width: 100%
+    position: fixed
+    top: 10px
+    left: 50%
+    width: 90%
+    transform: translateX(-50%)
     display: flex
-    justify-content: space-around
-    margin-top: 10px
+    justify-content: space-between
+    &__logo
+        font-size: 1.5em
+        color: #eadede
+    &__elements-wrapper
+    &__menu
+        position: fixed
+        width: 80%
+        height: 100vh
+        padding: 28px 20px
+        background: #2f2f2f
+        box-shadow: 0 0 15px black
+        left: -85vw
+        top: -10px
+        transition: transform .2s linear
+        &--show
+            transform: translateX(80vw)
+    &__list
+        list-style-type: none
+    &__item
+        margin-bottom: 10px
+    &__link
+        color: #797979
+        text-decoration: none
+        &:hover
+            padding-bottom: 2px
+            color: #c6bcbc
+            border-bottom: 1px solid #797979
+    &__search
+        min-width: 150px
+        width: 50%
+        max-width: 200px
+        margin-top: 10px
+        padding: 4px 16px
+        border: 1px solid #797979
+        border-radius: 30px
+        line-height: 150%
+        color: #797979
+        outline: none
+        background: none

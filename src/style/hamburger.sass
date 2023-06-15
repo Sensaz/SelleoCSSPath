@@ -9,5 +9,13 @@
     cursor: pointer
     &__element
         width: 100%
-        background-color: white
+        background-color: #eadede
         padding: 2px
+        transform-origin: 10% 1.5px
+        transition: transform .1s linear
+        &--rotated45
+            transform: rotate(45deg)
+        &--hidden
+            visibility: hidden
+        &--rotated-45
+            transform: rotate(-45deg)
