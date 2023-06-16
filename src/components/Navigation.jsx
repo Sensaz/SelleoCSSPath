@@ -1,12 +1,7 @@
 import { Hamburger } from './global/Hamburger';
 import '../style/navigation.sass';
 import { useState } from 'react';
-
-const navLinks = [
-  { id: 1, content: 'Products' },
-  { id: 2, content: 'Offers' },
-  { id: 3, content: 'Services' }
-];
+import { navLinks } from '../assets';
 
 export const Navigation = () => {
   const [menuIsExtended, setMenuIsExtended] = useState(false);
@@ -19,11 +14,13 @@ export const Navigation = () => {
     </li>
   ));
 
+  const navigationMenuClass = `navigation__menu ${menuIsExtended ? 'navigation__menu--show' : ''}`;
+
   return (
     <header className="navigation">
       <strong className="navigation__logo">braun</strong>
       <div>
-        <nav className={`navigation__menu ${menuIsExtended ? 'navigation__menu--show' : ''}`}>
+        <nav className={navigationMenuClass}>
           <ul className="navigation__list">{navigationList}</ul>
           <input
             required
