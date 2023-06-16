@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './mainContent/Header';
 
-export const Main = () => {
+export const ContentPage = () => {
   return (
     <main className="main">
       <Header />

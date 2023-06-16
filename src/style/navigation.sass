@@ -4,10 +4,13 @@
 .navigation
     @include globalMixins.setFlexBox($justify: space-between, $align: center)
     position: fixed
-    top: 10px
+    z-index: 10
+    top: 0
     left: 50%
     width: 90%
     max-height: globalVariable.$maxNavigationHeight
+    padding: 10px 0
+    background: #2f2f2f
     transform: translateX(-50%)
     @include globalMixins.tabletDevice
         align-items: baseline
@@ -17,7 +20,7 @@
     &__menu
         position: fixed
         left: -85vw
-        top: -10px
+        top: 0
         width: 80%
         height: 100vh
         padding: 28px 20px

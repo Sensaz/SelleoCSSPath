@@ -3,37 +3,38 @@ import { ReactSVG } from 'react-svg';
 import facebook from '../../image/facebook.svg';
 import instagram from '../../image/instagram.svg';
 import twitter from '../../image/twitter.svg';
+import '../../style/header.sass';
 
 export const Header = () => {
   return (
-    <header className="main__header">
+    <header className="main__header header">
       <aside className="header__aside">
-        <ReactSVG className="aside__svg" src={facebook} />
-        <ReactSVG className="aside__svg" src={instagram} />
-        <ReactSVG className="aside__svg" src={twitter} />
-        Iconic design . recognised
+        <ReactSVG className="header__svg" src={facebook} />
+        <ReactSVG className="header__svg" src={instagram} />
+        <ReactSVG className="header__svg" src={twitter} />
+        <span>
+          Iconic design. <mark className="header__mark"> recognised</mark>
+        </span>
       </aside>
       <section className="header__section">
-        <article>
-          <h2 className="section__title">There's beauty in simplicity</h2>
-          <p className="section__content">
+        <h2 className="header__title">There's beauty in simplicity</h2>
+        <article className="header__article">
+          <p className="header__content">
             Characteristic German design, quality and engineering prowess bolster Braun's standing
             against cheaply produced competing producs
           </p>
-          <button className="section__button">Buy now</button>
+          <button className="header__button">Buy now</button>
         </article>
       </section>
       <section className="header__section">obrazek</section>
-      <footer className="header__footer">
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
+      <footer className="header__slider">
+        <button className="header__slider-button header__slider-button--previous"></button>
+        <div className="header__image-indicators">
+          <span className="header__image-indicator"></span>
+          <span className="header__image-indicator"></span>
+          <span className="header__image-indicator"></span>
         </div>
-        <div>
-          <button></button>
-          <button></button>
-        </div>
+        <button className="header__slider-button header__slider-button--next"></button>
       </footer>
     </header>
   );

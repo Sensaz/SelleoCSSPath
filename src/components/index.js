@@ -1,4 +1,4 @@
-import { Main } from './Main';
+import { ContentPage } from './ContentPage';
 import { Navigation } from './Navigation';
 
-export { Main, Navigation };
+export { Navigation, ContentPage };

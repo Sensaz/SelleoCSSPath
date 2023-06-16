@@ -1,10 +1,10 @@
-import { Navigation, Main } from './components';
+import { Navigation, ContentPage } from './components';
 
 function App() {
   return (
     <>
       <Navigation />
-      <Main />
+      <ContentPage />
     </>
   );
 }
