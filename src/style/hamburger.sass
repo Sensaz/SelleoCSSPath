@@ -1,23 +1,29 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+$elementGap: 4px
+
 .hamburger
-    display: flex
-    flex-direction: column
+    @include globalMixins.setFlexBox($direction: column, $gap: $elementGap)
+    position: relative
     width: 30px
-    gap: 4px
     background: none
     border: none
     outline: none
     cursor: pointer
-    @media (min-width: 767px)
+    @include globalMixins.tabletDevice
         display: none
     &__element
         width: 100%
-        background-color: #eadede
-        padding: 2px
-        transform-origin: 10% 1.5px
+        padding: $elementGap / 2
+        background-color: map-get(globalVariable.$textColors, "primaryBrightened")
+        transform-origin: 50% 50%
         transition: transform .1s linear
         &--rotated45
+            position: absolute
             transform: rotate(45deg)
         &--hidden
             visibility: hidden
         &--rotated-45
+            position: absolute
             transform: rotate(-45deg)
