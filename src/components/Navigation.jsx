@@ -22,7 +22,7 @@ export const Navigation = () => {
   return (
     <header className="navigation">
       <strong className="navigation__logo">braun</strong>
-      <div className="navigatoin__elements-wrapper">
+      <div>
         <nav className={`navigation__menu ${menuIsExtended ? 'navigation__menu--show' : ''}`}>
           <ul className="navigation__list">{navigationList}</ul>
           <input

@@ -1,52 +1,49 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
 .navigation
+    @include globalMixins.setFlexBox($justify: space-between, $align: center)
     position: fixed
-    display: flex
     top: 10px
     left: 50%
     width: 90%
-    justify-content: space-between
-    align-items: baseline
     transform: translateX(-50%)
+    @include globalMixins.tabletDevice
+        align-items: baseline
     &__logo
         font-size: 1.5em
-        color: #eadede
-    &__elements-wrapper
+        color: map-get(globalVariable.$textColors, "primaryBrightened")
     &__menu
         position: fixed
+        left: -85vw
+        top: -10px
         width: 80%
         height: 100vh
         padding: 28px 20px
         background: #2f2f2f
         box-shadow: 0 0 15px black
-        left: -85vw
-        top: -10px
         transition: transform .2s linear
-        @media (min-width: 767px)
-            display: flex
-            align-items: baseline
-            gap: 25px
+        @include globalMixins.tabletDevice
+            @include globalMixins.setFlexBox($align: baseline, $gap: 25px)
             position: static
-            height: auto
             width: 100%
+            height: auto
             padding: 0
             box-shadow: none
-            left: 0
-            top: 0
         &--show
             transform: translateX(80vw)
     &__list
         list-style-type: none
-        @media (min-width: 767px)
-            display: flex
-            gap: 15px
+        @include globalMixins.tabletDevice
+            @include globalMixins.setFlexBox($gap: 15px)
     &__item
         margin-bottom: 10px
-        @media (min-width: 767px)
+        @include globalMixins.tabletDevice
             margin-bottom: 0
     &__link
         display: inline-block
         position: relative
-        color: #797979
+        color: map-get(globalVariable.$textColors, "primary")
         text-decoration: none
         transition: color .1s linear
         &::after
@@ -56,29 +53,29 @@
             height: 1px
             left: 0
             bottom: -5px
-            background: #797979
+            background: map-get(globalVariable.$textColors, "primary")
             transform: scaleX(0)
             transition: transform .1s linear
         &:hover
-            color: #c6bcbc
+            color: map-get(globalVariable.$textColors, "primaryBrightened")
             &::after
                 transform: scaleX(1)
     &__search
         min-width: 150px
         width: 50%
         max-width: 200px
+        line-height: 150%
         margin-top: 10px
         padding: 4px 16px
-        border: 1px solid #797979
         border-radius: 30px
-        line-height: 150%
-        color: #797979
-        outline: none
+        border: 1px solid map-get(globalVariable.$textColors, "primary")
+        color: map-get(globalVariable.$textColors, "primary")
         background: none
+        outline: none
         transition: box-shadow .1s linear
-        @media (min-width: 767px)
-            width: 120px
+        @include globalMixins.tabletDevice
+            width: 150px
         &:focus
-            box-shadow: 0px 0px 1px#fefefead, 0px 0px 3px #fefefe8a
+            box-shadow: 0px 0px 1px map-get(globalVariable.$textColors, "primaryBrightened") 0px 0px 3px map-get(globalVariable.$textColors, "primaryBrightened")
         &:valid
-            border: 1px solid #c6bcbc
+            border: 1px solid map-get(globalVariable.$textColors, "primaryBrightened")
