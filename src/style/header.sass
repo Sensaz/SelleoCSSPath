@@ -1,29 +1,84 @@
 @use './variables/globalVariable'
+@use './variables/globalMixins'
+// @include globalMixins.tabletDevice
 
 .header
+    position: relative
     display: flex
     flex-direction: column
     gap: 30px
     width: 100%
+    @include globalMixins.tabletDevice
+        flex-direction: row
+        &::before
+            content: "SB47"
+            position: absolute
+            top: 0
+            right: -15%
+            font-size: 12em
+            font-weight: 100
+            line-height: 0.75em
+            z-index: -5
+            font-family: 'Noto Sans SC', sans-serif
+            color: map-get( globalVariable.$textColors, 'primary')
+            @media screen and ( max-width:  915px)
+                font-size: 8em
     &__aside
         display: flex
         align-items: center
         justify-content: center
+        font-size: 0.8em
         gap: 15px
+        @include globalMixins.tabletDevice
+            position: relative
+            top: 120px
+            flex-direction: column
+            max-width: 85px
+    &__social-media-icon
+        display: inline-block
+        fill: map-get( globalVariable.$textColors, 'primary')
+        margin-top: 5px
+        transform: scale(0.8)
+        cursor: pointer
+        @include globalMixins.tabletDevice
+            display: block
+    &__info
+        @include globalMixins.tabletDevice
+            order: -1
+            white-space: nowrap
+            transform: rotate(-90deg)
+            align-items: center
+            &::before
+                content: ""
+                display: inline-block
+                padding-top: 100%
+                max-width: 20px
+                vertical-align: middle
+    &__camera
+        min-width: 250px
+        width: 70%
+        border-radius: 15px
+        box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.8 )
     &__mark
         color: map-get( globalVariable.$textColors, 'primaryBrightened')
         background: none
     &__section
         display: flex
         flex-direction: column
-        gap: 50px
+        justify-content: center
+        align-items: center
+        flex-basis: 50%
+        gap: 70px
     &__title
-        font-weight: 300
+        font-family: 'Montserrat', sans-serif
+        color: map-get( globalVariable.$textColors, 'primaryBrightened')
         font-size: 2.5em
     &__article
         margin-left: 40px
     &__content
         position: relative
+        font-family: 'Roboto Flex', sans-serif
+        line-height: 170%
         &::before
             content: ""
             position: absolute
@@ -34,20 +89,81 @@
     &__button
         color: map-get( globalVariable.$textColors, 'primaryBrightened')
         position: relative
-        margin-top: 40px
+        z-index: 7
+        width: 100px
+        height: 30px
+        margin-top: 60px
         text-transform: uppercase
         font-size: 1em
         background: none
         padding: 0 15px 8px 0
-        border-bottom: 1px solid #b02c2c
-        line-height: 0.85em
         cursor: pointer
+        &:hover
+            padding: 7px 4px
+        &:hover::before
+            animation: linear .3s buttonAnimation forwards
+        &:hover::after
+            display: none
         &::after
             content: ""
             position: absolute
+            z-index: -2
             top: 0
             right: 0
             border-left: 3px solid transparent
             border-right: 3px solid transparent
             border-bottom: 3px solid map-get( globalVariable.$textColors, 'primaryBrightened')
             transform: rotate(45deg)
+        &::before
+            content: ""
+            position: absolute
+            left: 50%
+            bottom: 0
+            z-index: -1
+            width: 100%
+            height: 1px
+            transform: translateX(-50%)
+            background: #b02c2c
+    &__slider
+        display: flex
+        order: 1
+        justify-content: flex-end
+        align-items: center
+        width: 100%
+        height: 80px
+    &__image-indicators
+        display: flex
+        align-items: center
+        gap: 10px
+        margin: 0 20px
+    &__image-indicator
+        width: 15px
+        height: 2px
+        background: map-get( globalVariable.$textColors, 'primary')
+    &__slider-button
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 42px
+        height: 42px
+        border-radius: 50%
+        padding: 10px
+        border: 1px solid map-get( globalVariable.$textColors, 'primary')
+        background: none
+        cursor: pointer
+    &__arow
+        border-top: 5px solid transparent
+        border-bottom: 5px solid transparent
+        border-left: 10px solid map-get( globalVariable.$textColors, 'primary')
+        &--left
+            transform: rotate(180deg)
+
+@keyframes buttonAnimation
+    0%
+        width: 0
+        height: 1px
+    50%
+        width: 100%
+        height: 1px
+    100%
+        height: 100%

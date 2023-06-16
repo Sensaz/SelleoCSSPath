@@ -18,7 +18,7 @@ export const Navigation = () => {
 
   return (
     <header className="navigation">
-      <strong className="navigation__logo">braun</strong>
+      <strong className="navigation__logo">brAun</strong>
       <div>
         <nav className={navigationMenuClass}>
           <ul className="navigation__list">{navigationList}</ul>

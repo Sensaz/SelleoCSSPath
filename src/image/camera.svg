@@ -1,0 +1,10 @@
+<svg class="camera" xmlns="http://www.w3.org/2000/svg" width="320" height="200">
+        <rect width="320" height="200" fill="#c6bcbc" rx="10" />
+    <g class="lens">
+        <circle class="first-layayer" cx="210" cy="100" r="70" stroke="black" fill="#c6bcbc" />
+        <circle class="second-layayer" cx="210" cy="100" r="50" stroke="#191818" fill="#c6bcbc" />
+        <circle class="thirty-layayer" cx="210" cy="100" r="30" fill="#191818" />
+    </g>
+    <circle class="flesh" cx="300" cy="40" r="5"  fill="#0b0b0b" />
+        <text x="50" y="40" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="16" font-family="Alegreya Sans SC">brAun</text>
+</svg>
