@@ -1,9 +1,12 @@
+@use './variables/globalVariable'
+
 *
     padding: 0
     margin: 0
     box-sizing: border-box
 
 body
-    min-height: 200vh
     overflow-x: hidden
+    padding-top: globalVariable.$maxNavigationHeight * 1.5
+    color: map-get(globalVariable.$textColors, 'primary')
     background: #2f2f2f
