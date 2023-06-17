@@ -1,0 +1,55 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+.card
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    gap: 30px
+    cursor: pointer
+    &:hover &__title
+        color: #4f4c4c
+    &:hover &__details--dot
+        visibility: hidden
+    &:hover &__details::before
+        transform: translateX(100px)
+    &__title
+        font-weight: 300
+    &__content
+        color: #4f4c4c
+        line-height: 150%
+    &__details
+        position: relative
+        display: flex
+        overflow: hidden
+        justify-content: center
+        align-items: center
+        height: 20px
+        width: 100px
+        gap: 10px
+        backdrop: map-get( globalVariable.$textColors, 'primaryBrightened')
+        &::before
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            z-index: 4
+            background: map-get( globalVariable.$textColors, 'primaryBrightened')
+            transition: .2s linear transform
+        &--dot
+            position: relative
+            display: inline-block
+            border-radius: 50%
+            width: 5px
+            height: 5px
+            z-index: 5
+            background: map-get( globalVariable.$textColors, 'primary')
+        &--hovered
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            white-space: nowrap
+            font-size: .8em
+            font-weight: 600
+            color: #b02c2c

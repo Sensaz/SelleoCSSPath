@@ -1,0 +1,14 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+.main
+    width: 80%
+    margin: 0 auto
+    &__article
+        width: 100%
+        padding: 48px 32px
+        background: map-get( globalVariable.$textColors, 'primaryBrightened')
+    &__section
+        display: flex
+        flex-direction: column
+        gap: 80px

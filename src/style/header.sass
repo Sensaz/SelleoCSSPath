@@ -115,10 +115,13 @@
             transform: translateX(-50%)
             background: #b02c2c
     &__slider
-        @include globalMixins.setFlexBox($justify: flex-end, $align: center)
+        @include globalMixins.setFlexBox($justify: center, $align: center)
         order: 1
         width: 100%
         height: 80px
+        @include globalMixins.tabletDevice
+            width: 90%
+            justify-content: flex-end
     &__image-indicators
         @include globalMixins.setFlexBox($align: center, $gap: 10px)
         align-items: center
