@@ -1,5 +1,7 @@
 import { Description } from './Description';
 import { Card } from './Card';
-import { Header } from './Header';
+import { CardsSection } from './CardsSection';
+import { ImageCarouselControls } from './ImageCarouselControls';
+ImageCarouselControls;
 
-export { Description, Card, Header };
+export { Description, Card, CardsSection, ImageCarouselControls };
