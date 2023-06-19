@@ -1,4 +1,4 @@
-import { Description } from './Description';
+import { Description } from './DescriptionElements/Description';
 import { Card } from './Card';
 import { CardsSection } from './CardsSection';
 import { ImageCarouselControls } from './ImageCarouselControls';

@@ -1,4 +1,4 @@
-import '../../style/description.sass';
+import '../../../style/description/description.sass';
 
 export const Description = ({ title, children, btnText, theme, btnUnderDescription }) => {
   let titleTheme = 'description__title';

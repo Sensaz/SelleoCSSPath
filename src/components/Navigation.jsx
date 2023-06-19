@@ -1,5 +1,5 @@
 import { Hamburger } from './global/Hamburger';
-import '../style/navigation.sass';
+import '../style/bodyNavigation/navigation.sass';
 import { useState } from 'react';
 import { navLinks } from '../assets';
 

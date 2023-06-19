@@ -1,5 +1,5 @@
 import { ReactSVG } from 'react-svg';
-import '../../style/descriptionAside.sass';
+import '../../../style/description/descriptionAside.sass';
 
 export const DescriptionAside = ({ aside }) => {
   const { images, content, marked = '', smallFont = true } = aside;

@@ -1,6 +1,7 @@
-import { Description } from './Description';
-import '../../style/descriptionSection.sass';
-import { DescriptionAside } from './DescriptionAside';
+import { Description } from './DescriptionElements/Description';
+// import '../../../style/description/descriptionSection.sass';
+import '../../style/description/descriptionSection.sass';
+import { DescriptionAside } from './DescriptionElements/DescriptionAside';
 
 const DescriptionSection = ({
   title,

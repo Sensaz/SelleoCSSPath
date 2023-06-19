@@ -1,4 +1,4 @@
-import '../../style/hamburger.sass';
+import '../../style/bodyNavigation/hamburger.sass';
 
 export const Hamburger = ({ isClicked, click }) => {
   const hamburgerElement = {
