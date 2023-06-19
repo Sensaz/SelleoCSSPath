@@ -2,7 +2,7 @@
 @use './variables/globalMixins'
 
 .header
-    @include globalMixins.setFlexBox($direction: column, $justify: flex-end, $align: center, $gap: 30px)
+    @include globalMixins.setFlexBox($direction: column, $justify: flex-end, $align: center, $gap: globalVariable.$gapItemsM)
     position: relative
     width: 100%
     padding: 48px 32px
@@ -22,7 +22,7 @@
             @media screen and ( max-width:  915px)
                 font-size: 8em
     &__aside
-        @include globalMixins.setFlexBox($justify: center, $align: center, $gap: 15px)
+        @include globalMixins.setFlexBox($justify: center, $align: center, $gap: globalVariable.$gapItemsS)
         font-size: 0.8em
         @include globalMixins.tabletDevice
             position: relative
@@ -58,7 +58,7 @@
         color: map-get( globalVariable.$textColors, 'primaryBrightened')
         background: none
     &__section
-        @include globalMixins.setFlexBox($direction: column, $justify: center, $align: center, $gap: 70px)
+        @include globalMixins.setFlexBox($direction: column, $justify: center, $align: center, $gap: globalVariable.$gapItemsXl)
         flex-basis: 50%
     &__title
         font-family: 'Montserrat', sans-serif
@@ -124,9 +124,7 @@
             width: 95%
             justify-content: flex-end
     &__image-indicators
-        @include globalMixins.setFlexBox($align: center, $gap: 10px)
-        align-items: center
-        gap: 10px
+        @include globalMixins.setFlexBox($align: center, $gap: globalVariable.$gapItemsS)
         margin: 0 20px
     &__image-indicator
         width: 15px

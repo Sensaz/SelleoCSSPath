@@ -2,18 +2,13 @@
 @use './variables/globalMixins'
 
 .carusel-control
-    display: flex
+    @include globalMixins.setFlexBox($justify: center, $align: center, $gap: globalVariable.$gapItemsM)
     width: 100%
-    justify-content: center
-    align-items: center
-    gap: 30px
     @include globalMixins.tabletDevice
         justify-content: flex-end
         margin-bottom: 40px
     &__swap-img
-        display: flex
-        justify-content: center
-        align-items: center
+        @include globalMixins.setFlexBox( $justify: center, $align: center )
         width: 48px
         height: 48px
         border-radius: 50%
@@ -36,8 +31,7 @@
         border-right: 12px solid gray
         transition: .1s linear border-right
     &__queue-wrapper
-        display: flex
-        gap: 10px
+        @include globalMixins.setFlexBox($gap: globalVariable.$gapItemsS )
     &__queue
         display: inline-block
         height: 2px

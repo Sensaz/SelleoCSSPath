@@ -29,7 +29,7 @@
         box-shadow: 0 0 15px black
         transition: transform .2s linear
         @include globalMixins.tabletDevice
-            @include globalMixins.setFlexBox($align: baseline, $gap: 25px)
+            @include globalMixins.setFlexBox($align: baseline, $gap: globalVariable.$gapItemsM)
             position: static
             width: 100%
             height: auto
@@ -40,7 +40,7 @@
     &__list
         list-style-type: none
         @include globalMixins.tabletDevice
-            @include globalMixins.setFlexBox($gap: 15px)
+            @include globalMixins.setFlexBox($gap: globalVariable.$gapItemsS)
     &__item
         margin-bottom: 10px
         @include globalMixins.tabletDevice

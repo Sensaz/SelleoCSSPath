@@ -2,10 +2,8 @@
 @use './variables/globalMixins'
 
 .description
+    @include globalMixins.setFlexBox($direction: column, $gap: globalVariable.$gapItemsXl)
     position: relative
-    display: flex
-    flex-direction: column
-    gap: 70px
     @include globalMixins.tabletDevice
         max-width: 400px
     &__title
@@ -16,8 +14,8 @@
         &--fancy
             font-family: 'Montserrat', sans-serif
     &__content
+        @include globalMixins.setFlexBox()
         position: relative
-        display: flex
         line-height: 150%
         border-left: 1px solid map-get( globalVariable.$textColors, 'primary')
         color: #4f4c4c

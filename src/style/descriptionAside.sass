@@ -4,12 +4,9 @@
 .aside
     display: none
     @include globalMixins.tabletDevice
-        display: flex
-        justify-content: center
-        align-items: center
+        @include globalMixins.setFlexBox( $justify: center, $align: center, $gap: globalVariable.$gapItemsS)
         width: 20%
         white-space: nowrap
-        gap: 10px
         transform: rotate(-90deg)
     &__content
         font-size: .6em

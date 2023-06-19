@@ -2,12 +2,8 @@
 @use './variables/globalMixins'
 
 .description-section
+    @include globalMixins.setFlexBox($direction: column, $justify: center, $align: center, $gap: globalVariable.$gapItemsM)
     position: relative
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    gap: 40px
     width: 100%
     @include globalMixins.tabletDevice
         flex-direction: row
@@ -19,9 +15,7 @@
             width: 40%
             padding-right: 80px
     &__photo
-        display: flex
-        justify-content: center
-        align-items: center
+        @include globalMixins.setFlexBox( $justify: center, $align: center)
         width: 100%
         max-height: 500px
         overflow: hidden

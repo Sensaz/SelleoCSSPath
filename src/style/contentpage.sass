@@ -5,9 +5,7 @@
     width: 80%
     margin: 0 auto
     &__article
-        display: flex
-        flex-direction: column
-        gap: 80px
+        @include globalMixins.setFlexBox($direction: column,  $gap: globalVariable.$gapItemsXl)
         width: 100%
         padding: 48px 32px
         @include globalMixins.tabletDevice
@@ -21,8 +19,6 @@
         &--light
             background: map-get( globalVariable.$textColors, 'primaryBrightened')
     &__section
-        display: flex
-        flex-direction: column
-        gap: 80px
+        @include globalMixins.setFlexBox($direction: column,  $gap: globalVariable.$gapItemsXl)
         @include globalMixins.tabletDevice
             flex-direction: row
