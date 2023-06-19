@@ -2,7 +2,7 @@
 @use './variables/globalMixins'
 
 .cards-section
-    @include globalMixins.setFlexBox($justify: space-around,  $gap: globalVariable.$gapItemsXl)
+    @include globalMixins.setFlexBox($justify: space-around, $align: stretch ,$gap: globalVariable.$gapItemsXl)
     flex-wrap: wrap
     @include globalMixins.tabletDevice
         gap: 0

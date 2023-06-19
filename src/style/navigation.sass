@@ -42,7 +42,7 @@
         @include globalMixins.tabletDevice
             @include globalMixins.setFlexBox($gap: globalVariable.$gapItemsS)
     &__item
-        margin-bottom: 10px
+        margin-bottom: globalVariable.$gapItemsS
         @include globalMixins.tabletDevice
             margin-bottom: 0
     &__link
@@ -70,7 +70,7 @@
         width: 50%
         max-width: 200px
         line-height: 150%
-        margin-top: 10px
+        margin-top: globalVariable.$gapItemsS
         padding: 4px 16px
         border-radius: 30px
         border: 1px solid map-get(globalVariable.$textColors, "primary")

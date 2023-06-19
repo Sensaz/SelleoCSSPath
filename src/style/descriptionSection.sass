@@ -11,9 +11,11 @@
         gap: 0
     &__depiction
         width: 100%
+        @media screen and ( max-width:  1105px)
+            margin: globalVariable.$gapItemsM
         @include globalMixins.tabletDevice
             width: 40%
-            padding-right: 80px
+            padding-right: globalVariable.$gapItemsXl
     &__photo
         @include globalMixins.setFlexBox( $justify: center, $align: center)
         width: 100%
@@ -40,7 +42,7 @@
                 width: 70%
                 &--fancy
                     border-radius: 10px
-                    box-shadow: 5px 5px 15px black
+                    box-shadow: 5px 5px black
                 &--full-size
                     width: 200%
                     object-fit: cover

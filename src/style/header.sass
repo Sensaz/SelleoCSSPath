@@ -119,7 +119,7 @@
         @include globalMixins.setFlexBox($justify: center, $align: center)
         order: 1
         width: 100%
-        height: 80px
+        height: globalVariable.$gapItemsXl
         @include globalMixins.tabletDevice
             width: 95%
             justify-content: flex-end
@@ -135,7 +135,7 @@
         width: 42px
         height: 42px
         border-radius: 50%
-        padding: 10px
+        padding: globalVariable.$gapItemsS
         border: 1px solid map-get( globalVariable.$textColors, 'primary')
         background: none
         cursor: pointer
