@@ -12,7 +12,7 @@
         align-items: flex-start
         text-align: left
     &:hover &__title
-        color: map-get( globalVariable.$primaryColors, 'primary')
+        color: map-get( globalVariable.$primaryColors, 'primaryDarken')
     &:hover &__details--dot
         opacity: 0
     &:hover &__details::before
@@ -21,8 +21,9 @@
         font-size: .9em
         text-transform: uppercase
         font-weight: 300
+        transition: .1s linear color
     &__content
-        color: map-get( globalVariable.$primaryColors, 'primary')
+        color: map-get( globalVariable.$primaryColors, 'primaryDarken')
         line-height: 150%
     &__details
         @include globalMixins.setFlexBox($justify: center, $align: center, $gap: globalVariable.$gapItemsS)

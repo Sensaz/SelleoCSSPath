@@ -13,7 +13,10 @@
     background: globalVariable.$bodyBackground
     transform: translateX(-50%)
     @include globalMixins.tabletDevice
-        align-items: baseline
+        align-items: center
+    &__wrapper
+        display: flex
+        align-items: center
     &__logo
         font-size: 1.5em
         color: map-get(globalVariable.$primaryColors, "primaryBrightened")
@@ -69,9 +72,8 @@
         min-width: 150px
         width: 50%
         max-width: 200px
-        line-height: 150%
         margin-top: globalVariable.$gapItemsS
-        padding: 4px 16px
+        padding: 6px 18px
         border-radius: 30px
         border: 1px solid map-get(globalVariable.$primaryColors, "primary")
         color: map-get(globalVariable.$primaryColors, "primary")
@@ -84,3 +86,14 @@
             box-shadow: 0px 0px 1px map-get(globalVariable.$primaryColors, "primaryBrightened"), 0px 0px 3px map-get(globalVariable.$primaryColors, "primaryBrightened")
         &:valid
             border: 1px solid map-get(globalVariable.$primaryColors, "primaryBrightened")
+    &__basket
+        display: inline-block
+        position: relative
+        top: 5px
+        left: 10px
+        fill: map-get(globalVariable.$primaryColors, "primary")
+        transform: scale(0.6)
+        cursor: pointer
+        transition: .1s linear fill
+        &:hover
+            fill: map-get(globalVariable.$primaryColors, "primaryBrightened")

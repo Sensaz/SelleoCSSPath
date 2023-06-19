@@ -2,6 +2,8 @@ import { Hamburger } from './global/Hamburger';
 import '../style/bodyNavigation/navigation.sass';
 import { useState } from 'react';
 import { navLinks } from '../assets';
+import { ReactSVG } from 'react-svg';
+import basket from '../image/basket.svg';
 
 export const Navigation = () => {
   const [menuIsExtended, setMenuIsExtended] = useState(false);
@@ -22,12 +24,15 @@ export const Navigation = () => {
       <div>
         <nav className={navigationMenuClass}>
           <ul className="navigation__list">{navigationList}</ul>
-          <input
-            required
-            type="text"
-            placeholder="How can we help?"
-            className="navigation__search"
-          />
+          <div className="navigation__wrapper">
+            <input
+              required
+              type="text"
+              placeholder="How can we help?"
+              className="navigation__search"
+            />
+            <ReactSVG className="navigation__basket" src={basket} alt="basketIcon" />
+          </div>
         </nav>
         <Hamburger isClicked={menuIsExtended} click={setMenuIsExtended} />
       </div>

@@ -70,7 +70,8 @@ export const mainContent = [
           title: 'Anything less would be too much',
           btnText: 'Buy now',
           aside: {
-            content: 'BN0378'
+            content: 'BN0378',
+            smallFont: false
           },
           img: 'watch',
           alt: 'watch',
@@ -86,9 +87,6 @@ export const mainContent = [
     descriptionSectionProperty: {
       title: 'Take control of your health',
       btnText: 'explore options',
-      aside: {
-        content: 'BN0378'
-      },
       theme: 'light',
       content: `Braun clocks have been designed to enhance their individual uses through a combination of features and functions. The Braun watch collection has been created as a true representation of quality.`
     }
