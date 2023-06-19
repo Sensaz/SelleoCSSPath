@@ -5,10 +5,24 @@
     width: 80%
     margin: 0 auto
     &__article
+        display: flex
+        flex-direction: column
+        gap: 80px
         width: 100%
         padding: 48px 32px
-        background: map-get( globalVariable.$textColors, 'primaryBrightened')
+        @include globalMixins.tabletDevice
+            padding: 0
+        &--background-bike
+            padding: 64px 32px
+            background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Users/sensaz/Desktop/SelleoSyle3/src/image/bike.jpg')
+            background-size: cover
+            @include globalMixins.tabletDevice
+                padding: 96px 0
+        &--light
+            background: map-get( globalVariable.$textColors, 'primaryBrightened')
     &__section
         display: flex
         flex-direction: column
         gap: 80px
+        @include globalMixins.tabletDevice
+            flex-direction: row

@@ -5,16 +5,25 @@
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: space-between
     text-align: center
     gap: 30px
     cursor: pointer
+    min-width: 150px
+    max-width: 350px
+    @include globalMixins.tabletDevice
+        flex-basis: 30%
+        align-items: flex-start
+        text-align: left
     &:hover &__title
         color: #4f4c4c
     &:hover &__details--dot
-        visibility: hidden
+        opacity: 0
     &:hover &__details::before
-        transform: translateX(100px)
+        transform: translateX(100%)
     &__title
+        font-size: .9em
+        text-transform: uppercase
         font-weight: 300
     &__content
         color: #4f4c4c
@@ -26,9 +35,11 @@
         justify-content: center
         align-items: center
         height: 20px
-        width: 100px
+        width: 100%
         gap: 10px
         backdrop: map-get( globalVariable.$textColors, 'primaryBrightened')
+        @include globalMixins.tabletDevice
+            justify-content: flex-start
         &::before
             content: ""
             position: absolute
@@ -44,12 +55,24 @@
             width: 5px
             height: 5px
             z-index: 5
+            opacity: 1
             background: map-get( globalVariable.$textColors, 'primary')
+            transition: .2s linear opacity
         &--hovered
             position: absolute
             top: 50%
             transform: translateY(-50%)
             white-space: nowrap
             font-size: .8em
+            line-height: .8em
             font-weight: 600
             color: #b02c2c
+            @include globalMixins.tabletDevice
+                left: 30px
+                &::before
+                    content: ""
+                    position: absolute
+                    left: -30px
+                    width: 20px
+                    height: 100%
+                    border-top: 2px solid #b02c2c

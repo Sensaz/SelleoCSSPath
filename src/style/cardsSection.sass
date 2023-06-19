@@ -1,0 +1,10 @@
+@use './variables/globalMixins'
+
+.cards-section
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    gap: 70px
+    @include globalMixins.tabletDevice
+        gap: 0
+        padding: 32px 48px

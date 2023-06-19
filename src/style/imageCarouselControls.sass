@@ -1,0 +1,47 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+.carusel-control
+    display: flex
+    width: 100%
+    justify-content: center
+    align-items: center
+    gap: 30px
+    @include globalMixins.tabletDevice
+        justify-content: flex-end
+        margin-bottom: 40px
+    &__swap-img
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 48px
+        height: 48px
+        border-radius: 50%
+        border: 1px solid gray
+        background: none
+        cursor: pointer
+        transition: .1s linear border-color
+        @include globalMixins.tabletDevice
+            order: 1
+        &:hover
+            border-color: map-get( globalVariable.$textColors, 'primaryBrightened')
+        &:hover .carusel-control__arrow
+            border-right: 12px solid map-get( globalVariable.$textColors, 'primaryBrightened')
+        &--next
+            transform: rotate(180deg)
+    &__arrow
+        display: inline-block
+        border-top: 6px solid transparent
+        border-bottom: 6px solid transparent
+        border-right: 12px solid gray
+        transition: .1s linear border-right
+    &__queue-wrapper
+        display: flex
+        gap: 10px
+    &__queue
+        display: inline-block
+        height: 2px
+        width: 15px
+        background: gray
+        &--active
+            background: map-get( globalVariable.$textColors, 'primaryBrightened')

@@ -2,9 +2,10 @@
 @use './variables/globalMixins'
 
 .header
-    @include globalMixins.setFlexBox($direction: column, $justify: center, $align: center, $gap: 30px)
+    @include globalMixins.setFlexBox($direction: column, $justify: flex-end, $align: center, $gap: 30px)
     position: relative
     width: 100%
+    padding: 48px 32px
     @include globalMixins.tabletDevice
         flex-direction: row
         &::before
@@ -120,7 +121,7 @@
         width: 100%
         height: 80px
         @include globalMixins.tabletDevice
-            width: 90%
+            width: 95%
             justify-content: flex-end
     &__image-indicators
         @include globalMixins.setFlexBox($align: center, $gap: 10px)

@@ -1,0 +1,94 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+.description
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 70px
+    @include globalMixins.tabletDevice
+        max-width: 400px
+    &__title
+        font-size: 2em
+        color: #181818
+        &--light, &--fancy
+            color: map-get( globalVariable.$textColors, 'primaryBrightened')
+        &--fancy
+            font-family: 'Montserrat', sans-serif
+    &__content
+        position: relative
+        display: flex
+        line-height: 150%
+        border-left: 1px solid map-get( globalVariable.$textColors, 'primary')
+        color: #4f4c4c
+        padding-left: 32px
+        &--light
+            color: map-get( globalVariable.$textColors, 'primaryBrightened')
+            border-left: 1px solid map-get( globalVariable.$textColors, 'primaryBrightened')
+        &--fancy
+            font-family: 'Roboto Flex', sans-serif
+            color: map-get( globalVariable.$textColors, 'primary')
+    &__aside
+        display: none
+        transform: rotate(-90deg)
+        color: map-get( globalVariable.$textColors, 'primary')
+        @include globalMixins.tabletDevice
+            display: inline-block
+    &__button
+        position: relative
+        width: fit-content
+        padding: 12px 18px
+        cursor: pointer
+        color: map-get( globalVariable.$textColors, 'primaryBrightened')
+        background: #b02c2c
+        text-transform: uppercase
+        font-size: .7em
+        font-weight: 600
+        clip-path: polygon(100% 0, 100% 80%, 93% 100%, 0 100%, 0 0)
+        &--indetion
+            margin-left: 32px
+        &--light
+            color: #181818
+            background: white
+        &--fancy
+            padding: 12px 18px 12px 0
+            background: none
+            cursor: pointer
+            transition: .1s linear padding-left
+            clip-path: none
+            &:hover
+                padding-left: 18px
+                clip-path: polygon(100% 0, 100% 80%, 93% 100%, 0 100%, 0 0)
+            &:hover::before
+                animation: linear .3s buttonAnimation forwards
+            &:hover::after
+                display: none
+            &::after
+                content: ""
+                position: absolute
+                top: 12px
+                right: 0
+                border-left: 3px solid transparent
+                border-right: 3px solid transparent
+                border-bottom: 3px solid map-get( globalVariable.$textColors, 'primaryBrightened')
+                transform: rotate(45deg)
+            &::before
+                content: ""
+                position: absolute
+                left: 50%
+                bottom: 0
+                z-index: -1
+                width: 100%
+                height: 1px
+                transform: translateX(-50%)
+                background: #b02c2c
+
+@keyframes buttonAnimation
+    0%
+        width: 0
+        height: 1px
+    50%
+        width: 100%
+        height: 1px
+    100%
+        height: 100%

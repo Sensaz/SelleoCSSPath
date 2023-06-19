@@ -1,0 +1,28 @@
+@use './variables/globalVariable'
+@use './variables/globalMixins'
+
+.aside
+    display: none
+    @include globalMixins.tabletDevice
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 20%
+        white-space: nowrap
+        gap: 10px
+        transform: rotate(-90deg)
+    &__content
+        font-size: .6em
+        text-transform: uppercase
+        &--big
+            font-size: 1em
+        &--marked
+            background: none
+            color: map-get( globalVariable.$textColors, 'primaryBrightened')
+    &__image
+        fill: map-get( globalVariable.$textColors, 'primary')
+        transform: rotate(90deg) scale(0.8)
+        cursor: pointer
+        transition: .1s linear fill
+        &:hover
+            fill: map-get( globalVariable.$textColors, 'primaryBrightened')
