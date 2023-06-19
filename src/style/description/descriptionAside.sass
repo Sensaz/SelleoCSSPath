@@ -15,11 +15,11 @@
             font-size: 1em
         &--marked
             background: none
-            color: map-get( globalVariable.$textColors, 'primaryBrightened')
+            color: map-get( globalVariable.$primaryColors, 'primaryBrightened')
     &__image
-        fill: map-get( globalVariable.$textColors, 'primary')
+        fill: map-get( globalVariable.$primaryColors, 'primary')
         transform: rotate(90deg) scale(0.8)
         cursor: pointer
         transition: .1s linear fill
         &:hover
-            fill: map-get( globalVariable.$textColors, 'primaryBrightened')
+            fill: map-get( globalVariable.$primaryColors, 'primaryBrightened')

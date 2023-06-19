@@ -35,14 +35,14 @@
                     font-family: 'Noto Sans SC', sans-serif
                     line-height: 0.8em
                     font-weight: 300
-                    color: map-get( globalVariable.$textColors, 'primary')
+                    color: map-get( globalVariable.$primaryColors, 'primary')
         &-img
             width: 100%
             @include globalMixins.tabletDevice
                 width: 70%
                 &--fancy
                     border-radius: 10px
-                    box-shadow: 5px 5px black
+                    box-shadow: 5px 5px 15px globalVariable.$boxShadowColor
                 &--full-size
                     width: 200%
                     object-fit: cover

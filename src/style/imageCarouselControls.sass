@@ -19,9 +19,9 @@
         @include globalMixins.tabletDevice
             order: 1
         &:hover
-            border-color: map-get( globalVariable.$textColors, 'primaryBrightened')
+            border-color: map-get( globalVariable.$primaryColors, 'primaryBrightened')
         &:hover .carusel-control__arrow
-            border-right: 12px solid map-get( globalVariable.$textColors, 'primaryBrightened')
+            border-right: 12px solid map-get( globalVariable.$primaryColors, 'primaryBrightened')
         &--next
             transform: rotate(180deg)
     &__arrow
@@ -36,6 +36,6 @@
         display: inline-block
         height: 2px
         width: 15px
-        background: gray
+        background: map-get( globalVariable.$primaryColors, 'primary')
         &--active
-            background: map-get( globalVariable.$textColors, 'primaryBrightened')
+            background: map-get( globalVariable.$primaryColors, 'primaryBrightened')

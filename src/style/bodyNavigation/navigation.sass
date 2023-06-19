@@ -10,13 +10,13 @@
     width: 90%
     max-height: globalVariable.$maxNavigationHeight
     padding: 10px 0 20px 0
-    background: #2f2f2f
+    background: globalVariable.$bodyBackground
     transform: translateX(-50%)
     @include globalMixins.tabletDevice
         align-items: baseline
     &__logo
         font-size: 1.5em
-        color: map-get(globalVariable.$textColors, "primaryBrightened")
+        color: map-get(globalVariable.$primaryColors, "primaryBrightened")
         font-family: 'Alegreya Sans SC'
     &__menu
         position: fixed
@@ -25,8 +25,8 @@
         width: 80%
         height: 100vh
         padding: 28px 20px
-        background: #2f2f2f
-        box-shadow: 0 0 15px black
+        background: globalVariable.$bodyBackground
+        box-shadow: 0 0 15px globalVariable.$boxShadowColor
         transition: transform .2s linear
         @include globalMixins.tabletDevice
             @include globalMixins.setFlexBox($align: baseline, $gap: globalVariable.$gapItemsM)
@@ -48,7 +48,7 @@
     &__link
         display: inline-block
         position: relative
-        color: map-get(globalVariable.$textColors, "primary")
+        color: map-get(globalVariable.$primaryColors, "primary")
         text-decoration: none
         transition: color .1s linear
         &::after
@@ -58,11 +58,11 @@
             height: 1px
             left: 0
             bottom: -5px
-            background: map-get(globalVariable.$textColors, "primary")
+            background: map-get(globalVariable.$primaryColors, "primary")
             transform: scaleX(0)
             transition: transform .1s linear
         &:hover
-            color: map-get(globalVariable.$textColors, "primaryBrightened")
+            color: map-get(globalVariable.$primaryColors, "primaryBrightened")
             &::after
                 transform: scaleX(1)
     &__search
@@ -73,14 +73,14 @@
         margin-top: globalVariable.$gapItemsS
         padding: 4px 16px
         border-radius: 30px
-        border: 1px solid map-get(globalVariable.$textColors, "primary")
-        color: map-get(globalVariable.$textColors, "primary")
+        border: 1px solid map-get(globalVariable.$primaryColors, "primary")
+        color: map-get(globalVariable.$primaryColors, "primary")
         background: none
         outline: none
         transition: box-shadow .1s linear
         @include globalMixins.tabletDevice
             width: 150px
         &:focus
-            box-shadow: 0px 0px 1px map-get(globalVariable.$textColors, "primaryBrightened"), 0px 0px 3px map-get(globalVariable.$textColors, "primaryBrightened")
+            box-shadow: 0px 0px 1px map-get(globalVariable.$primaryColors, "primaryBrightened"), 0px 0px 3px map-get(globalVariable.$primaryColors, "primaryBrightened")
         &:valid
-            border: 1px solid map-get(globalVariable.$textColors, "primaryBrightened")
+            border: 1px solid map-get(globalVariable.$primaryColors, "primaryBrightened")
