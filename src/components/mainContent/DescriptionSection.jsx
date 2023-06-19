@@ -3,7 +3,7 @@ import { Description } from './DescriptionElements/Description';
 import '../../style/description/descriptionSection.sass';
 import { DescriptionAside } from './DescriptionElements/DescriptionAside';
 
-const DescriptionSection = ({
+export const DescriptionSection = ({
   title,
   children,
   btnText,
@@ -44,5 +44,3 @@ const DescriptionSection = ({
     </section>
   );
 };
-
-export default DescriptionSection;

@@ -10,14 +10,15 @@
         padding: 48px 32px
         @include globalMixins.tabletDevice
             padding: 0
-        &--background-bike
-            padding: 64px 32px
-            background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Users/sensaz/Desktop/SelleoSyle3/src/image/bike.jpg')
-            background-size: cover
+        &--background
+            &-light
+                background: map-get( globalVariable.$textColors, 'primaryBrightened')
+            &-bike
+                padding: 64px 32px
+                background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Users/sensaz/Desktop/SelleoSyle3/src/image/bike.jpg')
+                background-size: cover
             @include globalMixins.tabletDevice
                 padding: 96px 0
-        &--light
-            background: map-get( globalVariable.$textColors, 'primaryBrightened')
     &__section
         @include globalMixins.setFlexBox($direction: column,  $gap: globalVariable.$gapItemsXl)
         @include globalMixins.tabletDevice
